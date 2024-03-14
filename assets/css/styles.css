@@ -10,3 +10,53 @@ body {
     background-repeat: no-repeat;
 }
 
+h1 {
+    margin-top: 2.5%;
+    margin-left: 37.5%;
+    margin-right: 37.5%;
+    border: white 2px solid;
+    font-size: 400%;
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+
+.time-lives {
+    display: flex;
+    margin-left: 38%;
+}
+
+.time-lives p {
+    margin: 2%;
+    padding-right: 5%;
+    padding-left: 5%;
+    border: white 2px solid;
+    font-size: 150%;
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+
+.game-board {
+    margin: 5% auto;
+    border: 1px solid;
+    height: 20em;
+    width: 20em;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.buttons {
+    text-align: center;
+}
+
+.buttons button {
+    color: white;
+    padding: 0.5%;
+    margin: 1%;
+    font-size: 150%;
+    background-color: black;
+    border: white 2px solid;
+}
+
