@@ -7,13 +7,18 @@ document.addEventListener('DOMContentLoaded', () => {
         var countdownInterval = setInterval(function() {
             if (timeLeft <= 0) {
                 clearInterval(countdownInterval);
-                countdownParagraph.textContent = 'Countdown over!';
+                alert('Game Over!');
             } else {
-                countdownParagraph.textContent = 'Time left: ' + timeLeft + ' seconds';
+                countdownParagraph.textContent = 'Time: ' + timeLeft;
             }
             timeLeft--;
+    
+            if (timeLeft < 0) {
+                clearInterval(countdownInterval);
+                alert('Game Over!');
+            }
         }, 1000); // Update every second
-    };
+    }
 
     document.getElementById('easy').addEventListener('click', function() {
         startCountdown();
