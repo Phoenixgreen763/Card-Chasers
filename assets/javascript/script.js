@@ -13,11 +13,14 @@ document.addEventListener('DOMContentLoaded', () => {
         livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ' + playerLives;
     }
 
+    let countdownInterval; 
+
     function startCountdown() {
+        clearInterval(countdownInterval); // Clear previous countdown interval if exists
         var timeLeft = 10;
         var countdownParagraph = document.getElementById('countdown');
 
-        var countdownInterval = setInterval(function() {
+        countdownInterval = setInterval(function() {
             if (timeLeft <= 0) {
                 clearInterval(countdownInterval);
                 alert('Game Over!');
