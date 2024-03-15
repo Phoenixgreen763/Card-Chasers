@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => { 
 
     function startCountdown() {
-        var timeLeft = 20;
+        var timeLeft = 10;
         var countdownParagraph = document.getElementById('countdown');
     
         var countdownInterval = setInterval(function() {
