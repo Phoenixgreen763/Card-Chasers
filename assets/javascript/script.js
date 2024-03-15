@@ -1,5 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => { 
 
+    const section = document.querySelector('section');
+    const livesCount = document.querySelector('#lives');
+    const playerLives = 2;
+
     function startCountdown() {
         var timeLeft = 10;
         var countdownParagraph = document.getElementById('countdown');
