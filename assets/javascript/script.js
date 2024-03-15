@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             timeLeft--;
         }, 1000); // Update every second
-    }
-    
+    };
+
+    document.getElementById('easy').addEventListener('click', function() {
+        startCountdown();
+    });
 });
