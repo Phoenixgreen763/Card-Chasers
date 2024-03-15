@@ -12,11 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 countdownParagraph.innerHTML = '<i class="fa-solid fa-clock"></i>Time:' + timeLeft;
             }
             timeLeft--;
-    
-            if (timeLeft < 0) {
-                clearInterval(countdownInterval);
-                alert('Game Over!');
-            }
         }, 1000); // Update every second
     };
 
