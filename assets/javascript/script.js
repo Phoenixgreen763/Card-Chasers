@@ -1,13 +1,22 @@
-document.addEventListener('DOMContentLoaded', () => { 
+document.addEventListener('DOMContentLoaded', () => {
 
     const section = document.querySelector('section');
     const livesCount = document.querySelector('#lives');
-    const playerLives = 2;
+    let playerLives;
+
+    function showLives(clicked) {
+        if (clicked === 'easy') {
+            playerLives = 2; // Set lives for easy mode
+        } else if (clicked === 'hard') {
+            playerLives = 3; // Set lives for hard mode
+        }
+        livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ' + playerLives;
+    }
 
     function startCountdown() {
         var timeLeft = 10;
         var countdownParagraph = document.getElementById('countdown');
-    
+
         var countdownInterval = setInterval(function() {
             if (timeLeft <= 0) {
                 clearInterval(countdownInterval);
@@ -17,18 +26,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             timeLeft--;
         }, 1000); // Update every second
-    };
+    }
 
     function startGameEasy() {
+        
+    }
 
+    function startGameHard() {
+        
     }
 
     document.getElementById('easy').addEventListener('click', function() {
+        showLives('easy');
         startCountdown();
+        startGameEasy();
     });
 
     document.getElementById('hard').addEventListener('click', function() {
+        showLives('hard');
         startCountdown();
+        startGameHard();
     });
 
 });
