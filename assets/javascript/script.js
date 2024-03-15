@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 clearInterval(countdownInterval);
                 alert('Game Over!');
             } else {
-                countdownParagraph.textContent = 'Time: ' + timeLeft;
+                countdownParagraph.innerHTML = '<i class="fa-solid fa-clock"></i>Time:' + timeLeft;
             }
             timeLeft--;
     
@@ -18,9 +18,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Game Over!');
             }
         }, 1000); // Update every second
+    };
+
+    function startGameEasy() {
+
     }
 
     document.getElementById('easy').addEventListener('click', function() {
         startCountdown();
     });
+
+    document.getElementById('hard').addEventListener('click', function() {
+        startCountdown();
+    });
+
 });
