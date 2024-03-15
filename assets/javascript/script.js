@@ -15,17 +15,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let countdownInterval; 
 
-    function startCountdown() {
+    function startCountdown(mode) {
         clearInterval(countdownInterval); // Clear previous countdown interval if exists
-        var timeLeft = 10;
+        let timeLeft;
+        if (mode === 'easy') {
+            timeLeft = 10
+        } else if (mode === 'hard') {
+            timeLeft = 20
+        };
         var countdownParagraph = document.getElementById('countdown');
-
+    
         countdownInterval = setInterval(function() {
             if (timeLeft <= 0) {
                 clearInterval(countdownInterval);
+                countdownParagraph.innerHTML = '<i class="fa-solid fa-clock"></i>Time: '; // Update display to show 0 when the timer reaches 0
+                livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: '
                 alert('Game Over!');
             } else {
-                countdownParagraph.innerHTML = '<i class="fa-solid fa-clock"></i>Time:' + timeLeft;
+                countdownParagraph.innerHTML = '<i class="fa-solid fa-clock"></i>Time: ' + timeLeft;
             }
             timeLeft--;
         }, 1000); // Update every second
@@ -40,14 +47,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.getElementById('easy').addEventListener('click', function() {
+        startCountdown('easy');
         showLives('easy');
-        startCountdown();
         startGameEasy();
     });
 
     document.getElementById('hard').addEventListener('click', function() {
+        startCountdown('hard');
         showLives('hard');
-        startCountdown();
         startGameHard();
     });
 
