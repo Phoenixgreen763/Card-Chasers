@@ -65,37 +65,37 @@ h1 {
 
 @media screen and (max-width: 1600px){
     h1 {
-        font-size: 300%;
+        font-size: 400%;
     }
     .time-lives p {
-        font-size: 112.5%;
+        font-size: 160%;
     }
     .buttons button {
-        font-size: 112.5%;
+        font-size: 160%;
     }
 }
 
 @media screen and (max-width: 1200px){
     h1 {
-        font-size: 200%;
+        font-size: 300%;
     }
     .time-lives p {
-        font-size: 75%;
+        font-size: 120%;
     }
     .buttons button {
-        font-size: 75%;
+        font-size: 120%;
     }
 }
 
 @media screen and (max-width: 800px){
     h1 {
-        font-size: 100%;
+        font-size: 200%;
     }
     .time-lives p {
-        font-size: 50%;
+        font-size: 80%;
     }
     .buttons button {
-        font-size: 50%;
+        font-size: 80%;
     }
 }
 
