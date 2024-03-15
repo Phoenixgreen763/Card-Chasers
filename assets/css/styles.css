@@ -23,10 +23,11 @@ h1 {
 
 .time-lives {
     display: flex;
+    justify-content: center;
 }
 
 .time-lives p {
-    margin: 2.5% auto;
+    margin: 2.5% 1%;
     padding-right: 5%;
     padding-left: 1%;
     border: white 2px solid;
@@ -98,6 +99,22 @@ h1 {
         font-size: 80%;
     }
 }
+
+@media screen and (max-width: 600px){
+    h1 {
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+}
+
+@media screen and (max-width: 400px){
+    h1 {
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+}
+
+
 
 
 
