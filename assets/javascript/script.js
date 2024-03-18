@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     //Grab items
-    const section = document.querySelector('section');
+    const gameArea = document.querySelector('.game-board');
     const livesCount = document.querySelector('#lives');
     let playerLives;
 
@@ -35,21 +35,29 @@ document.addEventListener('DOMContentLoaded', () => {
         const cards = randomize();
         console.log(cards);
         //Generate game HTML
-        const card = document.createElement("div");
-        const face = document.createElement('img');
-        const back = document.createElement("div");
-        card.classList = 'card';
-        face.classList = 'face';
-        back.classList = 'back';
-        
+        cards.forEach(item => {
+            const card = document.createElement("div");
+            const face = document.createElement('img');
+            const back = document.createElement("div");
+            card.classList = 'card';
+            face.classList = 'face';
+            back.classList = 'back';
+            //Add information to each card
+            face.src = item.imgSrc;
+            //Add cards to game-board div
+            gameArea.appendChild(card);
+            card.appendChild(face);
+            card.appendChild(back);
+        });
+
     };
 
     cardGenerator();
 
     randomize();
-    
+
     //Set game timer when buttons are pressed
-    let countdownInterval; 
+    let countdownInterval;
 
     function startCountdown(mode) {
         clearInterval(countdownInterval); // Clear previous countdown interval if exists
@@ -60,8 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
             timeLeft = 20
         };
         var countdownParagraph = document.getElementById('countdown');
-    
-        countdownInterval = setInterval(function() {
+
+        countdownInterval = setInterval(function () {
             if (timeLeft <= 0) {
                 clearInterval(countdownInterval);
                 countdownParagraph.innerHTML = '<i class="fa-solid fa-clock"></i>Time: '; // Update display to show 0 when the timer reaches 0
@@ -76,22 +84,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //Easy mode function
     function startGameEasy() {
-        
+
     }
 
     //Hard mode function
     function startGameHard() {
-        
+
     }
 
     //Button click funtions for game start
-    document.getElementById('easy').addEventListener('click', function() {
+    document.getElementById('easy').addEventListener('click', function () {
         startCountdown('easy');
         showLives('easy');
         startGameEasy();
     });
 
-    document.getElementById('hard').addEventListener('click', function() {
+    document.getElementById('hard').addEventListener('click', function () {
         startCountdown('hard');
         showLives('hard');
         startGameHard();
