@@ -48,6 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
             gameArea.appendChild(card);
             card.appendChild(face);
             card.appendChild(back);
+
+            card.addEventListener("click", (e) => {
+                console.log("Card clicked"); // Check if this message appears in the console
+                card.classList.toggle("toggleCard");
+            });
         });
 
     };
