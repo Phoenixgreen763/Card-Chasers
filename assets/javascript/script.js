@@ -1,9 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    //Grab items
     const section = document.querySelector('section');
     const livesCount = document.querySelector('#lives');
     let playerLives;
 
+    //Show player lives
     function showLives(clicked) {
         if (clicked === 'easy') {
             playerLives = 2; // Set lives for easy mode
@@ -13,6 +15,16 @@ document.addEventListener('DOMContentLoaded', () => {
         livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ' + playerLives;
     }
 
+    //Generate card data
+    const getCards = () => [
+        { imgSrc: "/assets/images/card1.jpg", name: "Album 1" },
+        { imgSrc: "/assets/images/card2.jpg", name: "Album 2" },
+        { imgSrc: "/assets/images/card1.jpg", name: "Album 1" },
+        { imgSrc: "/assets/images/card2.jpg", name: "Album 2" },
+    ];
+
+    
+    //Set game timer when buttons are pressed
     let countdownInterval; 
 
     function startCountdown(mode) {
@@ -38,14 +50,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000); // Update every second
     }
 
+    //Easy mode function
     function startGameEasy() {
         
     }
 
+    //Hard mode function
     function startGameHard() {
         
     }
 
+    //Button click funtions for game start
     document.getElementById('easy').addEventListener('click', function() {
         startCountdown('easy');
         showLives('easy');
