@@ -27,11 +27,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const randomize = () => {
         const cards = getCards();
         cards.sort(() => Math.random() - 0.5);
-        console.log(cards);
+        return cards;
     };
 
     //Generating cards function
-    
+    const cardGenerator = () => {
+        const cards = randomize();
+        console.log(cards);
+        //Generate game HTML
+        const card = document.createElement("div");
+        const face = document.createElement('img');
+        const back = document.createElement("div");
+        card.classList = 'card';
+        face.classList = 'face';
+        back.classList = 'back';
+        
+    };
+
+    cardGenerator();
 
     randomize();
     
