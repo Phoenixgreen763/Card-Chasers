@@ -23,6 +23,17 @@ document.addEventListener('DOMContentLoaded', () => {
         { imgSrc: "/assets/images/card2.jpg", name: "Album 2" },
     ];
 
+    //Randomize card data
+    const randomize = () => {
+        const cards = getCards();
+        cards.sort(() => Math.random() - 0.5);
+        console.log(cards);
+    };
+
+    //Generating cards function
+    
+
+    randomize();
     
     //Set game timer when buttons are pressed
     let countdownInterval; 
