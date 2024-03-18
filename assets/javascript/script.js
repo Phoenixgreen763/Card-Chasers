@@ -50,12 +50,17 @@ document.addEventListener('DOMContentLoaded', () => {
             card.appendChild(back);
 
             card.addEventListener("click", (e) => {
-                console.log("Card clicked"); // Check if this message appears in the console
                 card.classList.toggle("toggleCard");
+                checkCards();
             });
         });
-
     };
+
+    //Check if cards match function
+    const checkCards = (e) => {
+        const clickedCard = e.target
+        console.log(clickedCard);
+    }
 
     cardGenerator();
 
