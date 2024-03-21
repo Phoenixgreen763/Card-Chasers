@@ -26,13 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 clearInterval(countdownInterval);
                 countdownParagraph.innerHTML = initialCountdownHTML; // Revert to initial HTML
                 livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ';
-                alert('Game Over!');
                 return; // Exit the function after showing the alert
             }
             countdownParagraph.innerHTML = '<i class="fa-solid fa-clock"></i>Time: ' + timeLeft;
             timeLeft--;
             // Reset timer if lives equal 0
-            if (playerLives <= 0) {
+            if (playerLives === 0) {
                 clearInterval(countdownInterval);
                 countdownParagraph.innerHTML = initialCountdownHTML; // Revert to initial HTML
                 livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ';
@@ -49,11 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         console.log("Player Lives:", playerLives); // Debugging statement
         livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ' + playerLives;
-
-        if (playerLives <= 0) {
-            console.log("Game Over!"); // Debugging statement
-            alert('Game Over!');
-        }
     }
 
     //Generate card data
@@ -124,13 +118,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 playerLives--;
                 console.log("Player Lives:", playerLives); // Debugging statement
                 livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ' + playerLives;
-                if (playerLives <= 0) {
-                    console.log("Game Over!"); // Debugging statement
-                    alert('Game Over!');
+                if (playerLives === 0) {
+                    restartGame();
                 }
             }
         }
-    }
+    };
+
+    const restartGame = () => {
+        let getCards = randomize();
+        let face = document.querySelectorAll('.face');
+        let card = document.querySelectorAll('.card');
+        getCards.forEach((item,index) => {
+            card[index].classList.remove('toggleCard');
+            //On restart randomise all cards
+            card[index].style.pointerEvents = 'all';
+            face[index].src = item.imgSrc;
+            
+        });
+        playerLives = 2;
+        livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ' + playerLives;
+    };
 
     cardGenerator();
 
@@ -149,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //Button click funtions for game start
     document.getElementById('easy').addEventListener('click', function () {
-        startCountdown('easy');
+        //startCountdown('easy');
         showLives('easy');
         startGameEasy('easy');
     });
