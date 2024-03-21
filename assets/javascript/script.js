@@ -5,6 +5,41 @@ document.addEventListener('DOMContentLoaded', () => {
     const livesCount = document.querySelector('#lives');
     let playerLives;
 
+
+
+    //Set game timer when buttons are pressed
+    let countdownInterval;
+
+    function startCountdown(mode) {
+        clearInterval(countdownInterval); // Clear previous countdown interval if exists
+        let timeLeft;
+        if (mode === 'easy') {
+            timeLeft = 10;
+        } else if (mode === 'hard') {
+            timeLeft = 20;
+        }
+        const countdownParagraph = document.getElementById('countdown');
+        const initialCountdownHTML = countdownParagraph.innerHTML; // Store initial HTML content
+    
+        countdownInterval = setInterval(function () {
+            if (timeLeft <= 0) {
+                clearInterval(countdownInterval);
+                countdownParagraph.innerHTML = initialCountdownHTML; // Revert to initial HTML
+                livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ';
+                alert('Game Over!');
+                return; // Exit the function after showing the alert
+            }
+            countdownParagraph.innerHTML = '<i class="fa-solid fa-clock"></i>Time: ' + timeLeft;
+            timeLeft--;
+            // Reset timer if lives equal 0
+            if (playerLives <= 0) {
+                clearInterval(countdownInterval);
+                countdownParagraph.innerHTML = initialCountdownHTML; // Revert to initial HTML
+                livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ';
+            }
+        }, 1000); // Update every second
+    }
+
     //Show player lives
     function showLives(clicked) {
         if (clicked === 'easy') {
@@ -12,7 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (clicked === 'hard') {
             playerLives = 3; // Set lives for hard mode
         }
+        console.log("Player Lives:", playerLives); // Debugging statement
         livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ' + playerLives;
+
+        if (playerLives <= 0) {
+            console.log("Game Over!"); // Debugging statement
+            alert('Game Over!');
+        }
     }
 
     //Generate card data
@@ -44,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             back.classList = 'back';
             //Add information to each card
             face.src = item.imgSrc;
+            card.setAttribute('number', item.name);
             //Add cards to game-board div
             gameArea.appendChild(card);
             card.appendChild(face);
@@ -51,46 +93,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
             card.addEventListener("click", (e) => {
                 card.classList.toggle("toggleCard");
-                checkCards();
+                checkCards(e);
             });
         });
     };
 
     //Check if cards match function
     const checkCards = (e) => {
-        const clickedCard = e.target
-        console.log(clickedCard);
+        console.log(e);
+        const clickedCard = e.target;
+        clickedCard.classList.add('flipped');
+        const flippedCards = document.querySelectorAll('.flipped');
+        console.log(flippedCards);
+        //Check flipped cards
+        if (flippedCards.length === 2) {
+            if (flippedCards[0].getAttribute('number') ===
+                flippedCards[1].getAttribute('number')
+            ) {
+                console.log('match');
+                flippedCards.forEach(card => {
+                    card.classList.remove('flipped');
+                    card.style.pointerEvents = 'none';
+                });
+            } else {
+                console.log('wrong');
+                flippedCards.forEach(card => {
+                    card.classList.remove('flipped');
+                    setTimeout(() => card.classList.remove('toggleCard'), 1000)
+                });
+                playerLives--;
+                console.log("Player Lives:", playerLives); // Debugging statement
+                livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ' + playerLives;
+                if (playerLives <= 0) {
+                    console.log("Game Over!"); // Debugging statement
+                    alert('Game Over!');
+                }
+            }
+        }
     }
 
     cardGenerator();
 
     randomize();
 
-    //Set game timer when buttons are pressed
-    let countdownInterval;
-
-    function startCountdown(mode) {
-        clearInterval(countdownInterval); // Clear previous countdown interval if exists
-        let timeLeft;
-        if (mode === 'easy') {
-            timeLeft = 10
-        } else if (mode === 'hard') {
-            timeLeft = 20
-        };
-        var countdownParagraph = document.getElementById('countdown');
-
-        countdownInterval = setInterval(function () {
-            if (timeLeft <= 0) {
-                clearInterval(countdownInterval);
-                countdownParagraph.innerHTML = '<i class="fa-solid fa-clock"></i>Time: '; // Update display to show 0 when the timer reaches 0
-                livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: '
-                alert('Game Over!');
-            } else {
-                countdownParagraph.innerHTML = '<i class="fa-solid fa-clock"></i>Time: ' + timeLeft;
-            }
-            timeLeft--;
-        }, 1000); // Update every second
-    }
 
     //Easy mode function
     function startGameEasy() {
@@ -106,13 +151,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('easy').addEventListener('click', function () {
         startCountdown('easy');
         showLives('easy');
-        startGameEasy();
+        startGameEasy('easy');
     });
 
     document.getElementById('hard').addEventListener('click', function () {
         startCountdown('hard');
         showLives('hard');
-        startGameHard();
+        startGameHard('hard');
     });
 
 });
