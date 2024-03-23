@@ -217,33 +217,41 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    const restartGame = (mode) => {
-        let getCardsFunction;
+    const restartGame = (mode) => { // Receive mode as argument
         if (mode === 'easy') {
-            getCardsFunction = randomize;
+            let getCards = randomize();
+            let face = document.querySelectorAll('.face');
+            let card = document.querySelectorAll('.card');
+            getCards.forEach((item, index) => {
+                card[index].classList.remove('toggleCard');
+                // On restart randomize all cards
+                setTimeout(() => {
+                    card[index].style.pointerEvents = 'all';
+                    face[index].src = item.imgSrc;
+                    card[index].setAttribute("number", item.name);
+                    Section.style.pointerEvents = "all";
+                }, 1000);
+            });
         } else if (mode === 'hard') {
-            getCardsFunction = randomizeHard;
+            let getCards = randomizeHard();
+            let face = document.querySelectorAll('.face');
+            let card = document.querySelectorAll('.card');
+            getCards.forEach((item, index) => {
+                card[index].classList.remove('toggleCard');
+                // On restart randomize all cards
+                setTimeout(() => {
+                    card[index].style.pointerEvents = 'all';
+                    face[index].src = item.imgSrc;
+                    card[index].setAttribute("number", item.name);
+                    Section.style.pointerEvents = "all";
+                }, 1000);
+            });
         }
-    
-        gameArea.innerHTML = ''; // Clear the game area
-    
-        let cards = getCardsFunction();
-        playerLives = (mode === 'easy') ? 2 : 3;
+        playerLives = (mode === 'easy') ? 2 : 3; // Set player lives based on the mode
         livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ' + playerLives;
-    
-        // Generate new cards
-        if (mode === 'easy') {
-            cardGenerator();
-        } else if (mode === 'hard') {
-            cardGeneratorHard();
-        }
-    
         startCountdown(mode); // Start the countdown with the current mode
     };
-    
-    
-    
-    
+
     // Button click functions for game start
     document.getElementById('easy').addEventListener('click', () => {
         currentMode = 'easy'; // Set the current game mode
