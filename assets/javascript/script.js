@@ -13,9 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
         clearInterval(countdownInterval); // Clear previous countdown interval if exists
         let timeLeft;
         if (mode === 'easy') {
-            timeLeft = 15;
+            timeLeft = 10;
         } else if (mode === 'hard') {
-            timeLeft = 30;
+            timeLeft = 20;
         }
         const countdownParagraph = document.getElementById('countdown');
         const initialCountdownHTML = countdownParagraph.innerHTML; // Store initial HTML content
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ';
                 restartGame(currentMode); // Call restartGame with the current mode when lives equal 0
             }
-        }, 500); // Update every second
+        }, 1000); // Update every second
     };
 
     // Show player lives
@@ -126,26 +126,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    const restartGame = (mode) => {
-        // Clear any existing countdown interval
-        clearInterval(countdownInterval);
-        
-        // Reset player lives based on the mode
-        playerLives = (mode === 'easy') ? 2 : 3;
-    
-        // Update lives count display
+    const restartGame = (mode) => { // Receive mode as argument
+        let getCards = randomize();
+        let face = document.querySelectorAll('.face');
+        let card = document.querySelectorAll('.card');
+        getCards.forEach((item, index) => {
+            card[index].classList.remove('toggleCard');
+            // On restart randomize all cards
+        setTimeout (() => {
+            card[index].style.pointerEvents = 'all';
+            face[index].src = item.imgSrc;
+            card[index].setAttribute("number", item.name);
+            Section.style.pointerEvents = "all";
+        }, 1000);
+            
+        });
+        playerLives = (mode === 'easy') ? 2 : 3; // Set player lives based on the mode
         livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ' + playerLives;
-    
-        // Restart the countdown with the current mode
-        startCountdown(mode);
-    
-        // Clear game area
-        gameArea.innerHTML = '';
-    
-        // Generate new cards
-        cardGenerator();
+        startCountdown(mode); // Start the countdown with the current mode
     };
-    
 
     // Button click functions for game start
     document.getElementById('easy').addEventListener('click', () => {
@@ -168,5 +167,3 @@ document.addEventListener('DOMContentLoaded', () => {
         showLives('hard');
     });
 });
-
-
