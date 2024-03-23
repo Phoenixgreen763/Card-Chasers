@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentMode; // Variable to store the current game mode
     let countdownInterval;
 
-    // Set game timer when buttons are pressed
     function startCountdown(mode) {
         clearInterval(countdownInterval); // Clear previous countdown interval if exists
         let timeLeft;
@@ -21,24 +20,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const initialCountdownHTML = countdownParagraph.innerHTML; // Store initial HTML content
 
         countdownInterval = setInterval(function () {
-            if (timeLeft <= 0) {
+            if (timeLeft <= 0 || playerLives === 0) {
                 clearInterval(countdownInterval);
                 countdownParagraph.innerHTML = initialCountdownHTML; // Revert to initial HTML
                 livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ';
-                restartGame(currentMode); // Call restartGame with the current mode when the timer hits 0
+                if (timeLeft <= 0) {
+                    alert('Out of time!');
+                }
+                restartGame(currentMode); // Call restartGame with the current mode when the timer hits 0 or lives equal 0
                 return; // Exit the function after showing the alert
             }
             countdownParagraph.innerHTML = '<i class="fa-solid fa-clock"></i>Time: ' + timeLeft;
             timeLeft--;
-            // Reset timer if lives equal 0
-            if (playerLives === 0) {
-                clearInterval(countdownInterval);
-                countdownParagraph.innerHTML = initialCountdownHTML; // Revert to initial HTML
-                livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ';
-                restartGame(currentMode); // Call restartGame with the current mode when lives equal 0
-            }
-        }, 1000); // Update every second
-    };
+        }, 500);
+    }
+
 
     // Show player lives
     function showLives(clicked) {
@@ -99,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const clickedCard = e.target;
         clickedCard.classList.add('flipped');
         const flippedCards = document.querySelectorAll('.flipped');
+        const toggleCard = document.querySelectorAll('.toggleCard')
         console.log(flippedCards);
         // Check flipped cards
         if (flippedCards.length === 2) {
@@ -120,9 +117,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log("Player Lives:", playerLives); // Debugging statement
                 livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ' + playerLives;
                 if (playerLives === 0) {
+                    alert('Try Again!');
                     restartGame(currentMode);
                 }
             }
+        }
+        //Check if player has won
+        if (toggleCard.length === 4) {
+            setTimeout(() => {
+                alert('You win!');
+                restartGame(currentMode);
+            }, 500);
         }
     };
 
@@ -133,13 +138,12 @@ document.addEventListener('DOMContentLoaded', () => {
         getCards.forEach((item, index) => {
             card[index].classList.remove('toggleCard');
             // On restart randomize all cards
-        setTimeout (() => {
-            card[index].style.pointerEvents = 'all';
-            face[index].src = item.imgSrc;
-            card[index].setAttribute("number", item.name);
-            Section.style.pointerEvents = "all";
-        }, 1000);
-            
+            setTimeout(() => {
+                card[index].style.pointerEvents = 'all';
+                face[index].src = item.imgSrc;
+                card[index].setAttribute("number", item.name);
+                Section.style.pointerEvents = "all";
+            }, 1000);
         });
         playerLives = (mode === 'easy') ? 2 : 3; // Set player lives based on the mode
         livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ' + playerLives;
