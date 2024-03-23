@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (mode === 'easy') {
             timeLeft = 10;
         } else if (mode === 'hard') {
-            timeLeft = 20;
+            timeLeft = 15;
         }
         const countdownParagraph = document.getElementById('countdown');
         const initialCountdownHTML = countdownParagraph.innerHTML; // Store initial HTML content
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             countdownParagraph.innerHTML = '<i class="fa-solid fa-clock"></i>Time: ' + timeLeft;
             timeLeft--;
-        }, 500);
+        }, 1000);
     }
 
 
