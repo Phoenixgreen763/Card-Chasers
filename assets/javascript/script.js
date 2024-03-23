@@ -217,29 +217,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    const restartGame = (mode) => { // Receive mode as argument
-        let getCards = randomize();
-        let face = document.querySelectorAll('.face');
-        let card = document.querySelectorAll('.card');
-        
-        // Remove toggleCard class and reset pointer events for all cards
-        card.forEach(card => {
-            card.classList.remove('toggleCard');
-            card.style.pointerEvents = 'all';
-        });
+    const restartGame = (mode) => {
+        let getCardsFunction;
+        if (mode === 'easy') {
+            getCardsFunction = randomize;
+        } else if (mode === 'hard') {
+            getCardsFunction = randomizeHard;
+        }
     
-        getCards.forEach((item, index) => {
-            // On restart, randomize all cards and reset their state
-            setTimeout(() => {
-                face[index].src = item.imgSrc;
-                card[index].setAttribute("number", item.name);
-            }, 1000);
-        });
+        gameArea.innerHTML = ''; // Clear the game area
     
-        playerLives = (mode === 'easy') ? 2 : 3; // Set player lives based on the mode
+        let cards = getCardsFunction();
+        playerLives = (mode === 'easy') ? 2 : 3;
         livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ' + playerLives;
+    
+        // Generate new cards
+        if (mode === 'easy') {
+            cardGenerator();
+        } else if (mode === 'hard') {
+            cardGeneratorHard();
+        }
+    
         startCountdown(mode); // Start the countdown with the current mode
     };
+    
+    
     
     
     // Button click functions for game start
