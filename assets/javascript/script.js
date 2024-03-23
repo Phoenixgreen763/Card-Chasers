@@ -126,20 +126,39 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    const restartGame = (mode) => { // Receive mode as argument
-        let getCards = randomize();
-        let face = document.querySelectorAll('.face');
-        let card = document.querySelectorAll('.card');
-        getCards.forEach((item, index) => {
-            card[index].classList.remove('toggleCard');
-            // On restart randomize all cards
-            card[index].style.pointerEvents = 'all';
-            face[index].src = item.imgSrc;
-        });
-        playerLives = (mode === 'easy') ? 2 : 3; // Set player lives based on the mode
+    const restartGame = (mode) => {
+        // Clear any existing countdown interval
+        clearInterval(countdownInterval);
+        
+        // Reset player lives based on the mode
+        playerLives = (mode === 'easy') ? 2 : 3;
+    
+        // Update lives count display
         livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ' + playerLives;
-        startCountdown(mode); // Start the countdown with the current mode
+    
+        // Restart the countdown with the current mode
+        startCountdown(mode);
+    
+        // Get new randomized cards
+        const cards = randomize();
+    
+        // Get all card elements
+        const cardElements = document.querySelectorAll('.card');
+    
+        // Loop through each card and update its face
+        cardElements.forEach((card, index) => {
+            const face = card.querySelector('.face');
+            // Set the new image source
+            face.src = cards[index].imgSrc;
+            // Remove any existing classes
+            card.classList.remove('toggleCard', 'flipped');
+            // Re-enable pointer events
+            card.style.pointerEvents = 'all';
+        });
     };
+    
+    
+    
 
     // Button click functions for game start
     document.getElementById('easy').addEventListener('click', () => {
