@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         const countdownParagraph = document.getElementById('countdown');
         const initialCountdownHTML = countdownParagraph.innerHTML; // Store initial HTML content
-    
+
         countdownInterval = setInterval(function () {
             if (timeLeft <= 0) {
                 clearInterval(countdownInterval);
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let getCards = randomize();
         let face = document.querySelectorAll('.face');
         let card = document.querySelectorAll('.card');
-        getCards.forEach((item,index) => {
+        getCards.forEach((item, index) => {
             card[index].classList.remove('toggleCard');
             //On restart randomise all cards
             card[index].style.pointerEvents = 'all';
@@ -138,11 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
         playerLives = 2;
         livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ' + playerLives;
     };
-
-    cardGenerator();
-
-    randomize();
-
 
     //Easy mode function
     function startGameEasy() {
@@ -158,13 +153,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('easy').addEventListener('click', function () {
         //startCountdown('easy');
         showLives('easy');
-        startGameEasy('easy');
+        cardGenerator();
+        randomize();
     });
 
     document.getElementById('hard').addEventListener('click', function () {
         startCountdown('hard');
         showLives('hard');
-        startGameHard('hard');
     });
 
 });
