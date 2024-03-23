@@ -134,7 +134,6 @@ document.addEventListener('DOMContentLoaded', () => {
             //On restart randomise all cards
             card[index].style.pointerEvents = 'all';
             face[index].src = item.imgSrc;
-            
         });
         playerLives = 2;
         livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ' + playerLives;
