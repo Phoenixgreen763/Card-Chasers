@@ -52,13 +52,16 @@ h1 {
     height: 20em;
     width: 20em;
     border: 0;
-    display: grid;
-    grid-template-columns: repeat(2,10rem);
-    grid-template-rows: repeat(2,10rem);
-    grid-gap: 2rem;
-    perspective: 800px;
 }
 
+#rules {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    text-align: center;
+    margin: auto;
+    width: fit-content; 
+}
 .card {
     transform-style: preserve-3d;
     transition: transform 1s;
@@ -147,6 +150,12 @@ h1 {
         margin-right: 20%;
     }
 }
+
+
+
+
+
+
 
 
 

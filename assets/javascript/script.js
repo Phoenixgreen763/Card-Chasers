@@ -1,15 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    //Grab items
+    // Grab items
     const gameArea = document.querySelector('.game-board');
     const livesCount = document.querySelector('#lives');
+    const rulesParagraph = document.getElementById('rules');
     let playerLives;
-
-
-
-    //Set game timer when buttons are pressed
+    let currentMode; // Variable to store the current game mode
     let countdownInterval;
 
+    // Set game timer when buttons are pressed
     function startCountdown(mode) {
         clearInterval(countdownInterval); // Clear previous countdown interval if exists
         let timeLeft;
@@ -26,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 clearInterval(countdownInterval);
                 countdownParagraph.innerHTML = initialCountdownHTML; // Revert to initial HTML
                 livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ';
+                restartGame(currentMode); // Call restartGame with the current mode when the timer hits 0
                 return; // Exit the function after showing the alert
             }
             countdownParagraph.innerHTML = '<i class="fa-solid fa-clock"></i>Time: ' + timeLeft;
@@ -35,11 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 clearInterval(countdownInterval);
                 countdownParagraph.innerHTML = initialCountdownHTML; // Revert to initial HTML
                 livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ';
+                restartGame(currentMode); // Call restartGame with the current mode when lives equal 0
             }
         }, 1000); // Update every second
-    }
+    };
 
-    //Show player lives
+    // Show player lives
     function showLives(clicked) {
         if (clicked === 'easy') {
             playerLives = 2; // Set lives for easy mode
@@ -48,9 +49,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         console.log("Player Lives:", playerLives); // Debugging statement
         livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ' + playerLives;
-    }
+    };
 
-    //Generate card data
+    // Generate card data
     const getCards = () => [
         { imgSrc: "/assets/images/card1.jpg", name: "Album 1" },
         { imgSrc: "/assets/images/card2.jpg", name: "Album 2" },
@@ -58,18 +59,18 @@ document.addEventListener('DOMContentLoaded', () => {
         { imgSrc: "/assets/images/card2.jpg", name: "Album 2" },
     ];
 
-    //Randomize card data
+    // Randomize card data
     const randomize = () => {
         const cards = getCards();
         cards.sort(() => Math.random() - 0.5);
         return cards;
     };
 
-    //Generating cards function
+    // Generating cards function
     const cardGenerator = () => {
         const cards = randomize();
         console.log(cards);
-        //Generate game HTML
+        // Generate game HTML
         cards.forEach(item => {
             const card = document.createElement("div");
             const face = document.createElement('img');
@@ -77,10 +78,10 @@ document.addEventListener('DOMContentLoaded', () => {
             card.classList = 'card';
             face.classList = 'face';
             back.classList = 'back';
-            //Add information to each card
+            // Add information to each card
             face.src = item.imgSrc;
             card.setAttribute('number', item.name);
-            //Add cards to game-board div
+            // Add cards to game-board div
             gameArea.appendChild(card);
             card.appendChild(face);
             card.appendChild(back);
@@ -92,14 +93,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    //Check if cards match function
+    // Check if cards match function
     const checkCards = (e) => {
         console.log(e);
         const clickedCard = e.target;
         clickedCard.classList.add('flipped');
         const flippedCards = document.querySelectorAll('.flipped');
         console.log(flippedCards);
-        //Check flipped cards
+        // Check flipped cards
         if (flippedCards.length === 2) {
             if (flippedCards[0].getAttribute('number') ===
                 flippedCards[1].getAttribute('number')
@@ -119,47 +120,47 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log("Player Lives:", playerLives); // Debugging statement
                 livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ' + playerLives;
                 if (playerLives === 0) {
-                    restartGame();
+                    restartGame(currentMode);
                 }
             }
         }
     };
 
-    const restartGame = () => {
+    const restartGame = (mode) => { // Receive mode as argument
         let getCards = randomize();
         let face = document.querySelectorAll('.face');
         let card = document.querySelectorAll('.card');
         getCards.forEach((item, index) => {
             card[index].classList.remove('toggleCard');
-            //On restart randomise all cards
+            // On restart randomize all cards
             card[index].style.pointerEvents = 'all';
             face[index].src = item.imgSrc;
         });
-        playerLives = 2;
+        playerLives = (mode === 'easy') ? 2 : 3; // Set player lives based on the mode
         livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ' + playerLives;
+        startCountdown(mode); // Start the countdown with the current mode
     };
 
-    //Easy mode function
-    function startGameEasy() {
-
-    }
-
-    //Hard mode function
-    function startGameHard() {
-
-    }
-
-    //Button click funtions for game start
-    document.getElementById('easy').addEventListener('click', function () {
-        //startCountdown('easy');
+    // Button click functions for game start
+    document.getElementById('easy').addEventListener('click', () => {
+        currentMode = 'easy'; // Set the current game mode
+        startCountdown('easy');
         showLives('easy');
         cardGenerator();
         randomize();
+        rulesParagraph.remove();
+        gameArea.style.display = 'grid';
+        gameArea.style.gridTemplateColumns = 'repeat(2, 10rem)';
+        gameArea.style.gridTemplateRows = 'repeat(2, 10rem)';
+        gameArea.style.gridGap = '2rem';
+        gameArea.style.perspective = '800px';
     });
 
-    document.getElementById('hard').addEventListener('click', function () {
+    document.getElementById('hard').addEventListener('click', () => {
+        currentMode = 'hard'; // Set the current game mode
         startCountdown('hard');
         showLives('hard');
     });
-
 });
+
+
