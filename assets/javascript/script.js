@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (clicked === 'easy') {
             playerLives = 2; // Set lives for easy mode
         } else if (clicked === 'hard') {
-            playerLives = 3; // Set lives for hard mode
+            playerLives = 2; // Set lives for hard mode
         }
         console.log("Player Lives:", playerLives); // Debugging statement
         livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ' + playerLives;
@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 500);
             });
         }
-        playerLives = (mode === 'easy') ? 2 : 3; // Set player lives based on the mode
+        playerLives = (mode === 'easy') ? 2 : 2; // Set player lives based on the mode
         livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ' + playerLives;
         startCountdown(mode); // Start the countdown with the current mode
     };
