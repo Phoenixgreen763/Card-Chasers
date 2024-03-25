@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url(/assets/images/background.png);
+    background-image: url(/assets/images/background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -129,12 +129,30 @@ h1 {
         font-size: 400%;
     }
 
+    .time-lives {
+        margin-bottom: 30%;
+    }
+
     .time-lives p {
         font-size: 160%;
     }
 
+    .game-board {
+        margin-bottom: 30%;
+    }
+
     .buttons button {
         font-size: 160%;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .time-lives {
+        margin-bottom: 10%;
+    }
+
+    .game-board {
+        margin-bottom: 10%;
     }
 }
 
@@ -170,6 +188,7 @@ h1 {
     h1 {
         margin-left: 25%;
         margin-right: 25%;
+        margin-bottom: 10%;
     }
 }
 
@@ -177,5 +196,18 @@ h1 {
     h1 {
         margin-left: 20%;
         margin-right: 20%;
+        margin-bottom: 5%;
+    }
+
+    .time-lives {
+        margin-bottom: 10%;
+    }
+
+    .game-board {
+        margin-bottom: 15%;
+    }
+
+    #rules {
+        font-size: ;
     }
 }

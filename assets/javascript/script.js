@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
             countdownParagraph.innerHTML = '<i class="fa-solid fa-clock"></i>Time: ' + timeLeft; // Update the timer display
         }, 1000); // Update every second
     };
-    
-    
+
+
     // Function to check if the game is won
     function isGameWon() {
         const toggleCard = document.querySelectorAll('.toggleCard');
@@ -54,20 +54,36 @@ document.addEventListener('DOMContentLoaded', () => {
         livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ' + playerLives;
     };
 
-    // Generate card data
     const getCards = () => [
         { imgSrc: "/assets/images/card1.jpg", name: "Album 1" },
         { imgSrc: "/assets/images/card2.jpg", name: "Album 2" },
-        { imgSrc: "/assets/images/card1.jpg", name: "Album 1" },
-        { imgSrc: "/assets/images/card2.jpg", name: "Album 2" },
+        { imgSrc: "/assets/images/card3.jpg", name: "Album 3" },
+        { imgSrc: "/assets/images/card4.webp", name: "Album 4" },
+        { imgSrc: "/assets/images/card5.webp", name: "Album 5" },
+        { imgSrc: "/assets/images/card6.png", name: "Album 6" },
+        { imgSrc: "/assets/images/card7.jpeg", name: "Album 7" },
+        { imgSrc: "/assets/images/card8.jpg", name: "Album 8" },
     ];
 
-    // Randomize card data
     const randomize = () => {
-        const cards = getCards();
-        cards.sort(() => Math.random() - 0.5);
-        return cards;
+        const cards = getCards().slice(); // Create a copy to prevent modifying original array
+        const selectedCards = [];
+        const selectedNames = [];
+
+        while (selectedNames.length < 2) {
+            const index = Math.floor(Math.random() * cards.length);
+            const card = cards[index];
+            if (!selectedNames.includes(card.name)) {
+                selectedCards.push(card);
+                selectedNames.push(card.name);
+            }
+        }
+
+        const pairCards = [...selectedCards, ...selectedCards];
+        pairCards.sort(() => Math.random() - 0.5);
+        return pairCards;
     };
+
 
     // Generating cards function
     const cardGenerator = () => {
@@ -143,19 +159,34 @@ document.addEventListener('DOMContentLoaded', () => {
         { imgSrc: "/assets/images/card1.jpg", name: "Album 1" },
         { imgSrc: "/assets/images/card2.jpg", name: "Album 2" },
         { imgSrc: "/assets/images/card3.jpg", name: "Album 3" },
-        { imgSrc: "/assets/images/card1.jpg", name: "Album 1" },
-        { imgSrc: "/assets/images/card2.jpg", name: "Album 2" },
-        { imgSrc: "/assets/images/card3.jpg", name: "Album 3" },
+        { imgSrc: "/assets/images/card4.webp", name: "Album 4" },
+        { imgSrc: "/assets/images/card5.webp", name: "Album 5" },
+        { imgSrc: "/assets/images/card6.png", name: "Album 6" },
+        { imgSrc: "/assets/images/card7.jpeg", name: "Album 7" },
+        { imgSrc: "/assets/images/card8.jpg", name: "Album 8" },
     ];
 
-    // Randomize card data for hard mode
     const randomizeHard = () => {
-        const cardsHard = getCardsHard();
-        cardsHard.sort(() => Math.random() - 0.5);
-        return cardsHard;
+        const cards = getCardsHard().slice(); // Create a copy to prevent modifying original array
+        const selectedCards = [];
+        const selectedNames = [];
+
+        while (selectedNames.length < 3) {
+            const index = Math.floor(Math.random() * cards.length);
+            const card = cards[index];
+            if (!selectedNames.includes(card.name)) {
+                selectedCards.push(card);
+                selectedNames.push(card.name);
+            }
+        }
+
+        const pairCards = [...selectedCards, ...selectedCards];
+        pairCards.sort(() => Math.random() - 0.5);
+        return pairCards;
     };
 
-    // Generating cards for hard mode
+
+    // Generating cards function
     const cardGeneratorHard = () => {
         const cards = randomizeHard();
         console.log(cards);
@@ -182,7 +213,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Check if cards match function for hard mode
     const checkCardsHard = (e) => {
         console.log(e);
         const clickedCard = e.target;
@@ -314,7 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gameArea.style.height = '34em'
         updateButtonStates();
     });
-12
+    12
     // Update button states based on currentMode
     function updateButtonStates() {
         if (currentMode === 'easy') {
