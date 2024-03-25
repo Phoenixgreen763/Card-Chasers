@@ -156,9 +156,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = document.createElement("div");
             const face = document.createElement('img');
             const back = document.createElement("div");
-            card.classList = 'card';
-            face.classList = 'face';
-            back.classList = 'back';
+            card.classList = 'cardHard';
+            face.classList = 'faceHard';
+            back.classList = 'backHard';
             // Add information to each card
             face.src = item.imgSrc;
             card.setAttribute('number', item.name);
@@ -233,8 +233,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         } else if (mode === 'hard') {
             let getCards = randomizeHard();
-            let face = document.querySelectorAll('.face');
-            let card = document.querySelectorAll('.card');
+            let face = document.querySelectorAll('.faceHard');
+            let card = document.querySelectorAll('.cardHard');
             getCards.forEach((item, index) => {
                 card[index].classList.remove('toggleCard');
                 // On restart randomize all cards
@@ -253,9 +253,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // Button click functions for game start
+
+    //Remove hard mode cards from the board 
+    const removeHardCards = () => {
+        const hardCards = document.querySelectorAll('.cardHard');
+        hardCards.forEach(card => {
+            card.remove();
+        });
+    };
     const easyButton = document.getElementById('easy')
 
     easyButton.addEventListener('click', () => {
+        removeHardCards();
         currentMode = 'easy'; // Set the current game mode
         startCountdown('easy');
         showLives('easy');
@@ -267,12 +276,22 @@ document.addEventListener('DOMContentLoaded', () => {
         gameArea.style.gridTemplateRows = 'repeat(2, 10rem)';
         gameArea.style.gridGap = '2rem';
         gameArea.style.perspective = '800px';
+        gameArea.style.height = '20em'
         updateButtonStates();
     });
+
+    //Remove easy mode cards from the board 
+    const removeEasyCards = () => {
+        const easyCards = document.querySelectorAll('.card');
+        easyCards.forEach(card => {
+            card.remove();
+        });
+    };
 
     const hardButton = document.getElementById('hard')
 
     hardButton.addEventListener('click', () => {
+        removeEasyCards();
         currentMode = 'hard'; // Set the current game mode
         startCountdown('hard');
         showLives('hard');
@@ -284,6 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gameArea.style.gridTemplateRows = 'repeat(2, 10rem)';
         gameArea.style.gridGap = '2rem';
         gameArea.style.perspective = '800px';
+        gameArea.style.height = '34em'
         updateButtonStates();
     });
 

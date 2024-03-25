@@ -8,7 +8,8 @@ body {
     background-image: url("/assets/images/background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh; /* Ensure body takes up full viewport height */
+    height: 100vh;
+    /* Ensure body takes up full viewport height */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,7 +50,7 @@ h1 {
     justify-content: center;
     margin-bottom: 30%;
     border: 1px solid;
-    height: 34em;
+    height: 20em;
     width: 20em;
     border: 0;
 }
@@ -61,13 +62,14 @@ h1 {
     text-align: center;
     font-size: 150%;
 }
+
 .card {
     transform-style: preserve-3d;
     transition: transform 1s;
     position: relative;
     width: 100%;
     height: 100%;
-  }
+}
 
 .face,
 .back {
@@ -75,17 +77,39 @@ h1 {
     width: 100%;
     height: 100%;
     pointer-events: none;
-  }
+}
 
 .back {
     background-color: black;
     border: white 1px solid;
     backface-visibility: hidden;
-  }
+}
+
+.cardHard {
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.faceHard,
+.backHard {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.backHard {
+    background-color: black;
+    border: white 1px solid;
+    backface-visibility: hidden;
+}
 
 .toggleCard {
     transform: rotateY(180deg);
-  }
+}
 
 .buttons {
     text-align: center;
@@ -100,63 +124,58 @@ h1 {
     border: white 2px solid;
 }
 
-@media screen and (max-width: 1600px){
+@media screen and (max-width: 1600px) {
     h1 {
         font-size: 400%;
     }
+
     .time-lives p {
         font-size: 160%;
     }
+
     .buttons button {
         font-size: 160%;
     }
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1200px) {
     h1 {
         font-size: 300%;
     }
+
     .time-lives p {
         font-size: 120%;
     }
+
     .buttons button {
         font-size: 120%;
     }
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 800px) {
     h1 {
         font-size: 220%;
     }
+
     .time-lives p {
         font-size: 120%;
     }
+
     .buttons button {
         font-size: 120%;
     }
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 600px) {
     h1 {
         margin-left: 25%;
         margin-right: 25%;
     }
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 400px) {
     h1 {
         margin-left: 20%;
         margin-right: 20%;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
