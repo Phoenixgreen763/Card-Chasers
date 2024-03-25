@@ -252,8 +252,20 @@ document.addEventListener('DOMContentLoaded', () => {
         startCountdown(mode); // Start the countdown with the current mode
     };
 
+    // Remove previous mode from the game board
+
+    const removeEasy = () => {
+
+    };
+
+    const removeHard = () => {
+
+    };
+
     // Button click functions for game start
-    document.getElementById('easy').addEventListener('click', () => {
+    const easyButton = document.getElementById('easy')
+
+    easyButton.addEventListener('click', () => {
         currentMode = 'easy'; // Set the current game mode
         startCountdown('easy');
         showLives('easy');
@@ -265,9 +277,15 @@ document.addEventListener('DOMContentLoaded', () => {
         gameArea.style.gridTemplateRows = 'repeat(2, 10rem)';
         gameArea.style.gridGap = '2rem';
         gameArea.style.perspective = '800px';
+
+        if (currentMode === 'easy') {
+            easyButton.disabled = true;
+        }
     });
 
-    document.getElementById('hard').addEventListener('click', () => {
+    const hardButton = document.getElementById('hard')
+
+    hardButton.addEventListener('click', () => {
         currentMode = 'hard'; // Set the current game mode
         startCountdown('hard');
         showLives('hard');
@@ -279,5 +297,9 @@ document.addEventListener('DOMContentLoaded', () => {
         gameArea.style.gridTemplateRows = 'repeat(2, 10rem)';
         gameArea.style.gridGap = '2rem';
         gameArea.style.perspective = '800px';
+
+        if (currentMode === 'easy') {
+            hardButton.disabled = true;
+        }
     });
 });
