@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000);
     }
 
-
     // Show player lives
     function showLives(clicked) {
         if (clicked === 'easy') {
@@ -131,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Generate card data
+    // Generate card data for hard mode
     const getCardsHard = () => [
         { imgSrc: "/assets/images/card1.jpg", name: "Album 1" },
         { imgSrc: "/assets/images/card2.jpg", name: "Album 2" },
@@ -141,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { imgSrc: "/assets/images/card3.jpg", name: "Album 3" },
     ];
 
-    // Randomize card data
+    // Randomize card data for hard mode
     const randomizeHard = () => {
         const cardsHard = getCardsHard();
         cardsHard.sort(() => Math.random() - 0.5);
@@ -252,15 +251,6 @@ document.addEventListener('DOMContentLoaded', () => {
         startCountdown(mode); // Start the countdown with the current mode
     };
 
-    // Remove previous mode from the game board
-
-    const removeEasy = () => {
-
-    };
-
-    const removeHard = () => {
-
-    };
 
     // Button click functions for game start
     const easyButton = document.getElementById('easy')
@@ -277,10 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gameArea.style.gridTemplateRows = 'repeat(2, 10rem)';
         gameArea.style.gridGap = '2rem';
         gameArea.style.perspective = '800px';
-
-        if (currentMode === 'easy') {
-            easyButton.disabled = true;
-        }
+        updateButtonStates();
     });
 
     const hardButton = document.getElementById('hard')
@@ -297,9 +284,17 @@ document.addEventListener('DOMContentLoaded', () => {
         gameArea.style.gridTemplateRows = 'repeat(2, 10rem)';
         gameArea.style.gridGap = '2rem';
         gameArea.style.perspective = '800px';
+        updateButtonStates();
+    });
 
+    // Update button states based on currentMode
+    function updateButtonStates() {
         if (currentMode === 'easy') {
+            easyButton.disabled = true;
+            hardButton.disabled = false;
+        } else if (currentMode === 'hard') {
+            easyButton.disabled = false;
             hardButton.disabled = true;
         }
-    });
+    };
 });
