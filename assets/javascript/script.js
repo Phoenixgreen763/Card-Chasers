@@ -12,28 +12,36 @@ document.addEventListener('DOMContentLoaded', () => {
         clearInterval(countdownInterval); // Clear previous countdown interval if exists
         let timeLeft;
         if (mode === 'easy') {
-            timeLeft = 10;
+            timeLeft = 5;
         } else if (mode === 'hard') {
-            timeLeft = 15;
+            timeLeft = 10;
         }
         const countdownParagraph = document.getElementById('countdown');
         const initialCountdownHTML = countdownParagraph.innerHTML; // Store initial HTML content
-
+        // Update the timer display before starting the interval
+        countdownParagraph.innerHTML = '<i class="fa-solid fa-clock"></i>Time: ' + timeLeft;
         countdownInterval = setInterval(function () {
             if (timeLeft <= 0 || playerLives === 0) {
                 clearInterval(countdownInterval);
                 countdownParagraph.innerHTML = initialCountdownHTML; // Revert to initial HTML
                 livesCount.innerHTML = '<i class="fa-solid fa-heart"></i>Lives: ';
-                if (timeLeft <= 0) {
+                if (timeLeft <= 0 && !isGameWon()) {
                     alert('Out of time!');
+                    restartGame(currentMode); // Call restartGame with the current mode only if the game is not won
                 }
-                restartGame(currentMode); // Call restartGame with the current mode when the timer hits 0 or lives equal 0
                 return; // Exit the function after showing the alert
             }
-            countdownParagraph.innerHTML = '<i class="fa-solid fa-clock"></i>Time: ' + timeLeft;
             timeLeft--;
-        }, 1000);
-    }
+            countdownParagraph.innerHTML = '<i class="fa-solid fa-clock"></i>Time: ' + timeLeft; // Update the timer display
+        }, 1000); // Update every second
+    };
+    
+    
+    // Function to check if the game is won
+    function isGameWon() {
+        const toggleCard = document.querySelectorAll('.toggleCard');
+        return toggleCard.length === (currentMode === 'easy' ? 4 : 6);
+    };
 
     // Show player lives
     function showLives(clicked) {
