@@ -314,7 +314,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gameArea.style.height = '34em'
         updateButtonStates();
     });
-
+12
     // Update button states based on currentMode
     function updateButtonStates() {
         if (currentMode === 'easy') {
