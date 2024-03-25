@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     face[index].src = item.imgSrc;
                     card[index].setAttribute("number", item.name);
                     Section.style.pointerEvents = "all";
-                }, 1000);
+                }, 500);
             });
         } else if (mode === 'hard') {
             let getCards = randomizeHard();
@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     face[index].src = item.imgSrc;
                     card[index].setAttribute("number", item.name);
                     Section.style.pointerEvents = "all";
-                }, 1000);
+                }, 500);
             });
         }
         playerLives = (mode === 'easy') ? 2 : 3; // Set player lives based on the mode
