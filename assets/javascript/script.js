@@ -289,6 +289,30 @@ document.addEventListener('DOMContentLoaded', () => {
         startCountdown(mode); // Start the countdown with the current mode
     };
 
+    //Change styling for time-lives paragraphs
+    const changeStyle = () => {
+        countdownParagraph = document.querySelector('#countdown')
+        livesParagraph = document.querySelector('#lives')
+        // Apply the styles to countdownParagraph
+        countdownParagraph.style.margin = "2.5% auto";
+        countdownParagraph.style.paddingRight = "2%";
+        countdownParagraph.style.paddingLeft = "2%";
+        countdownParagraph.style.border = "white 2px solid";
+        countdownParagraph.style.fontSize = "200%";
+        countdownParagraph.style.textAlign = "center";
+        countdownParagraph.style.color = "white";
+        countdownParagraph.style.backgroundColor = "black";
+
+        // Apply the styles to livesCount
+        livesParagraph.style.margin = "2.5% auto";
+        livesParagraph.style.paddingRight = "2%";
+        livesParagraph.style.paddingLeft = "2%";
+        livesParagraph.style.border = "white 2px solid";
+        livesParagraph.style.fontSize = "200%";
+        livesParagraph.style.textAlign = "center";
+        livesParagraph.style.color = "white";
+        livesParagraph.style.backgroundColor = "black";
+    }
 
     // Button click functions for game start
 
@@ -302,6 +326,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const easyButton = document.getElementById('easy')
 
     easyButton.addEventListener('click', () => {
+        changeStyle();
         removeHardCards();
         currentMode = 'easy'; // Set the current game mode
         startCountdown('easy');
@@ -309,6 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cardGenerator();
         randomize();
         rulesParagraph.remove();
+
         gameArea.style.display = 'grid';
         gameArea.style.gridTemplateColumns = 'repeat(2, 10rem)';
         gameArea.style.gridTemplateRows = 'repeat(2, 10rem)';
@@ -329,6 +355,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hardButton = document.getElementById('hard')
 
     hardButton.addEventListener('click', () => {
+        changeStyle();
         removeEasyCards();
         currentMode = 'hard'; // Set the current game mode
         startCountdown('hard');
@@ -336,6 +363,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cardGeneratorHard();
         randomizeHard();
         rulesParagraph.remove();
+
         gameArea.style.display = 'grid';
         gameArea.style.gridTemplateColumns = 'repeat(2, 10rem)';
         gameArea.style.gridTemplateRows = 'repeat(2, 10rem)';
