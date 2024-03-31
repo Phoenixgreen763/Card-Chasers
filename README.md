@@ -25,4 +25,6 @@ View the live website here - https://phoenixgreen763.github.io/Card-Chasers/
     * These rules give a brief and concise explanation of the game to the player
     * These rules allow the user an easy understanding of the game without having to read external content.
 
+![Rules Section](/assets/images/rules.png)
+
 
