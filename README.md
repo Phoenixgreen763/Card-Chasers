@@ -3,7 +3,7 @@
 
 ## Summary 
 
-View the live website here - https://phoenixgreen763.github.io/Taekwondo-Llanharan/ 
+View the live website here - https://phoenixgreen763.github.io/Card-Chasers/ 
 
 ![UX Mockup](/assets/images/UXmockup.jpg)
 
