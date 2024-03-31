@@ -17,6 +17,7 @@ View the live website here - https://phoenixgreen763.github.io/Card-Chasers/
     * The user is first introduced to the basic landing page.
     * This page shows the name of the site as the heading, it is displayed clear and easily readable for users.
     * This page shows the rules section, and both difficulty buttons.
+    * The styling across the entirety of the site is consistent and easy to read.
   
 ![Landing Page](/assets/images/LandingPage.png)
 
@@ -26,5 +27,12 @@ View the live website here - https://phoenixgreen763.github.io/Card-Chasers/
     * These rules allow the user an easy understanding of the game without having to read external content.
 
 ![Rules Section](/assets/images/rules.png)
+
+* Buttons 
+    * The Main landing page of the site also displays a set of buttons
+    * These buttons allow the players to access the seperate modes for different difficulties.
+
+![Buttons section](/assets/images/buttons.png)
+
 
 
