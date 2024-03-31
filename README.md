@@ -11,7 +11,7 @@ View the live website here - https://phoenixgreen763.github.io/Card-Chasers/
 
 ## Features 
 
-## Existing features
+### Existing features
 
 * Landing page
     * The user is first introduced to the basic landing page.
@@ -34,5 +34,14 @@ View the live website here - https://phoenixgreen763.github.io/Card-Chasers/
 
 ![Buttons section](/assets/images/buttons.png)
 
+## Deployment Of The Website
+
+* The website was deployed to GitHub. The steps to deploy are shown, as follows:
+    * In the GitHub repository, navigate to the Settings tab
+    * Scroll down to GitHub pages and click "Check it out here!"
+    * Under "Source" ensure you select "main"
+    * Once the main branch has been selected, the page will be automatically refreshed with a detailed ribbon to display and indicate the successful deployment.
+
+The live link can be found here - https://phoenixgreen763.github.io/Card-Chasers/
 
 
