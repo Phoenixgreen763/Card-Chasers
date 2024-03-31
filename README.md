@@ -3,6 +3,8 @@
 
 ## Summary 
 
+Card Chasers is a memory matching card game, that can be enjoyed by users of all ages. The game seeks to engage players in a fun and challenging activity by allowing them to race against the clock, in an effort to match all the cards, or risk losing their lives. The game is comprised of two modes, so each user can test their skills further !
+
 View the live website here - https://phoenixgreen763.github.io/Card-Chasers/ 
 
 ![UX Mockup](/assets/images/UXmockup.jpg)
