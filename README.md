@@ -34,6 +34,18 @@ View the live website here - https://phoenixgreen763.github.io/Card-Chasers/
 
 ![Buttons section](/assets/images/buttons.png)
 
+### Features to Implement
+
+## User Stories
+
+## Testing
+
+## Validator Testing 
+
+## All Known Bugs
+
+## Design
+
 ## Deployment Of The Website
 
 * The website was deployed to GitHub. The steps to deploy are shown, as follows:
@@ -43,5 +55,28 @@ View the live website here - https://phoenixgreen763.github.io/Card-Chasers/
     * Once the main branch has been selected, the page will be automatically refreshed with a detailed ribbon to display and indicate the successful deployment.
 
 The live link can be found here - https://phoenixgreen763.github.io/Card-Chasers/
+
+## Technologies Used
+
+* HTML5
+* CSS
+* JavaScript
+
+## Credits
+
+* Code
+    * Perplexity ai was used to search for base ideas, these are the links for the source material. https://www.jamesqquick.com/blog/build-a-javascript-memory-match-game/, https://marina-ferreira.github.io/tutorials/js/memory-game/. These were used as core concepts for research. The final code for card chasers, does not reflect this work.
+
+* Content
+    * All content was written by the developer
+
+* Imagery
+    * All images came from shuttershock.
+
+* Icons
+    * All icons were sourced from fontawesome. They have been used on the lives and time bars to give a visually appealing appearance.
+    
+* Acknowledgements
+    * My Mentor Rahul for advice when planning, and tips for area of improvement.
 
 
