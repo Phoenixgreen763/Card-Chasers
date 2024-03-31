@@ -55,14 +55,14 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const getCards = () => [
-        { imgSrc: "/assets/images/card1.jpg", name: "Album 1" },
-        { imgSrc: "/assets/images/card2.jpg", name: "Album 2" },
-        { imgSrc: "/assets/images/card3.jpg", name: "Album 3" },
-        { imgSrc: "/assets/images/card4.webp", name: "Album 4" },
-        { imgSrc: "/assets/images/card5.webp", name: "Album 5" },
-        { imgSrc: "/assets/images/card6.png", name: "Album 6" },
-        { imgSrc: "/assets/images/card7.jpeg", name: "Album 7" },
-        { imgSrc: "/assets/images/card8.jpg", name: "Album 8" },
+        { imgSrc: "assets/images/card1.jpg", name: "Album 1" },
+        { imgSrc: "assets/images/card2.jpg", name: "Album 2" },
+        { imgSrc: "assets/images/card3.jpg", name: "Album 3" },
+        { imgSrc: "assets/images/card4.webp", name: "Album 4" },
+        { imgSrc: "assets/images/card5.webp", name: "Album 5" },
+        { imgSrc: "assets/images/card6.png", name: "Album 6" },
+        { imgSrc: "assets/images/card7.jpeg", name: "Album 7" },
+        { imgSrc: "assets/images/card8.jpg", name: "Album 8" },
     ];
 
     const randomize = () => {
@@ -156,14 +156,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Generate card data for hard mode
     const getCardsHard = () => [
-        { imgSrc: "/assets/images/card1.jpg", name: "Album 1" },
-        { imgSrc: "/assets/images/card2.jpg", name: "Album 2" },
-        { imgSrc: "/assets/images/card3.jpg", name: "Album 3" },
-        { imgSrc: "/assets/images/card4.webp", name: "Album 4" },
-        { imgSrc: "/assets/images/card5.webp", name: "Album 5" },
-        { imgSrc: "/assets/images/card6.png", name: "Album 6" },
-        { imgSrc: "/assets/images/card7.jpeg", name: "Album 7" },
-        { imgSrc: "/assets/images/card8.jpg", name: "Album 8" },
+        { imgSrc: "assets/images/card1.jpg", name: "Album 1" },
+        { imgSrc: "assets/images/card2.jpg", name: "Album 2" },
+        { imgSrc: "assets/images/card3.jpg", name: "Album 3" },
+        { imgSrc: "assets/images/card4.webp", name: "Album 4" },
+        { imgSrc: "assets/images/card5.webp", name: "Album 5" },
+        { imgSrc: "assets/images/card6.png", name: "Album 6" },
+        { imgSrc: "assets/images/card7.jpeg", name: "Album 7" },
+        { imgSrc: "assets/images/card8.jpg", name: "Album 8" },
     ];
 
     const randomizeHard = () => {
