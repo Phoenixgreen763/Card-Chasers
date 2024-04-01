@@ -158,7 +158,7 @@ h1 {
     }
 
     .time-lives {
-        margin-bottom: 30%;
+        margin-bottom: 10%;
     }
 
     .time-lives p {
@@ -168,6 +168,18 @@ h1 {
     .game-board {
         margin-bottom: 30%;
     }
+
+    .active-game-easy {
+        grid-template-columns: repeat(2, 7rem);
+        grid-template-rows: repeat(3, 7rem);
+        height: 12em;
+        }
+
+    .active-game-hard {
+        grid-template-columns: repeat(2, 7rem);
+        grid-template-rows: repeat(3, 7rem);
+        height: 20em;
+        }
 
     .buttons button {
         font-size: 160%;
@@ -180,7 +192,7 @@ h1 {
     }
 
     .game-board {
-        margin-bottom: 10%;
+        margin-bottom: 30%;
     }
 }
 
@@ -191,6 +203,10 @@ h1 {
 
     .time-lives p {
         font-size: 120%;
+    }
+
+    #rules {
+        font-size: 125%;
     }
 
     .buttons button {
@@ -207,6 +223,11 @@ h1 {
         font-size: 120%;
     }
 
+    #rules {
+        font-size: 100%;
+        margin-bottom: 30%;
+    }
+
     .buttons button {
         font-size: 120%;
     }
@@ -217,18 +238,23 @@ h1 {
         margin-left: 25%;
         margin-right: 25%;
         margin-bottom: 10%;
+        font-size: 200%;
+    }
+
+    .game-board {
+        margin-bottom: 0%;
     }
 
     .active-game-easy {
-    grid-template-columns: repeat(2, 7rem);
-    grid-template-rows: repeat(2, 7rem);
-    height: 15em;
+    grid-template-columns: repeat(2, 5rem);
+    grid-template-rows: repeat(2, 5rem);
+    height: 12em;
     }
 
     .active-game-hard {
-    grid-template-columns: repeat(2, 7rem);
-    grid-template-rows: repeat(3, 7rem);
-    height: 25em;
+    grid-template-columns: repeat(2, 5rem);
+    grid-template-rows: repeat(3, 5rem);
+    height: 20em;
     }
 }
 
@@ -249,7 +275,7 @@ h1 {
     }
 
     #rules {
-        font-size: 100%;
+        font-size: 75%;
     }
 
     .buttons button {
