@@ -236,9 +236,6 @@ h1 {
 
 @media screen and (max-width: 600px) {
     h1 {
-        margin-left: 25%;
-        margin-right: 25%;
-        margin-bottom: 10%;
         font-size: 200%;
     }
 
@@ -261,9 +258,6 @@ h1 {
 
 @media screen and (max-width: 400px) {
     h1 {
-        margin-left: 20%;
-        margin-right: 20%;
-        margin-bottom: 5%;
         font-size: 180%;
     }
 
