@@ -31,6 +31,17 @@ h1 {
     margin-bottom: 30%;
 }
 
+.active {
+    margin: 2.5% auto;
+    padding-right: 2%;
+    padding-left: 2%;
+    border: white 2px solid;
+    font-size: 200%;
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+
 .time-lives i {
     font-size: 80%;
 }
@@ -132,7 +143,9 @@ h1 {
 .buttons button {
     color: white;
     padding: .5%;
-    margin: 5%;
+    margin-top: 5%;
+    margin-right: 5%;
+    margin-left: 5%;
     font-size: 200%;
     background-color: black;
     border: white 2px solid;
@@ -228,7 +241,7 @@ h1 {
     }
 
     .time-lives {
-        margin-bottom: 20%;
+        margin-bottom: 2.5%;
     }
 
     .time-lives p {
@@ -240,6 +253,6 @@ h1 {
     }
 
     .game-board {
-        margin-bottom: 15%;
+        margin-bottom: 2.5%;
     }
 }

@@ -293,25 +293,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const changeStyle = () => {
         countdownParagraph = document.querySelector('#countdown')
         livesParagraph = document.querySelector('#lives')
-        // Apply the styles to countdownParagraph
-        countdownParagraph.style.margin = "2.5% auto";
-        countdownParagraph.style.paddingRight = "2%";
-        countdownParagraph.style.paddingLeft = "2%";
-        countdownParagraph.style.border = "white 2px solid";
-        countdownParagraph.style.fontSize = "200%";
-        countdownParagraph.style.textAlign = "center";
-        countdownParagraph.style.color = "white";
-        countdownParagraph.style.backgroundColor = "black";
 
-        // Apply the styles to livesCount
-        livesParagraph.style.margin = "2.5% auto";
-        livesParagraph.style.paddingRight = "2%";
-        livesParagraph.style.paddingLeft = "2%";
-        livesParagraph.style.border = "white 2px solid";
-        livesParagraph.style.fontSize = "200%";
-        livesParagraph.style.textAlign = "center";
-        livesParagraph.style.color = "white";
-        livesParagraph.style.backgroundColor = "black";
+        countdownParagraph.classList.add('active')
+        livesParagraph.classList.add('active')
     }
 
     // Button click functions for game start
