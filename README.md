@@ -34,6 +34,25 @@ View the live website here - https://phoenixgreen763.github.io/Card-Chasers/
 
 ![Buttons section](/assets/images/buttons.png)
 
+* Easy Mode 
+    * Clicking the easy button starts the easy mode for the player
+    * This mode displays 2 sets of cards on the game board, a 5 second timer, and 2 lives for the player
+    * Each set is chosen at random and then displayed, this keeps the game fresh as to not repeat the same image over, and over.
+    
+    ![Easy Cards]()
+
+    * If the player runs out of time, they are met with a "Time's Up!" message, and the game then restarts.
+    
+    ![Times Up Popup]()
+
+    * If the player runs out of lives, they are met with a "Try Again!" message, and the game then restarts
+
+    ![Try Again Popup]()
+
+    * If a player matches all the cards on the board, they are met with a "You Win!" message, and the game then restarts
+
+    ![You Win Popup]()
+
 ### Features to Implement
 
 * Score Tracker
@@ -51,8 +70,6 @@ View the live website here - https://phoenixgreen763.github.io/Card-Chasers/
     * Inputs such as the users name could be required before play
     * This feature would allow us to cache the users info and remember them when they return
     * This information could be used in conjuction with something like a leaderboard to track highscores
-
-
 
 ## User Stories
 
