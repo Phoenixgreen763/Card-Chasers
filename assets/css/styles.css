@@ -39,7 +39,6 @@ h1 {
     justify-content: center;
     margin-bottom: 30%;
     border: 1px solid;
-    height: 20em;
     width: 20em;
     border: 0;
 }
@@ -206,6 +205,18 @@ h1 {
         margin-right: 25%;
         margin-bottom: 10%;
     }
+
+    .active-game-easy {
+    grid-template-columns: repeat(2, 7rem);
+    grid-template-rows: repeat(2, 7rem);
+    height: 15em;
+    }
+
+    .active-game-hard {
+    grid-template-columns: repeat(2, 7rem);
+    grid-template-rows: repeat(3, 7rem);
+    height: 25em;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -216,7 +227,7 @@ h1 {
     }
 
     .time-lives {
-        margin-bottom: 10%;
+        margin-bottom: 20%;
     }
 
     .game-board {
