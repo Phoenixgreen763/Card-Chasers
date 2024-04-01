@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Merienda');
+@import url('https://fonts.googleapis.com/css?family=Merienda&effect=outline');
 
 * {
     margin: 0;
@@ -19,12 +19,10 @@ body {
 }
 
 h1 {
-    border: white 2px solid;
     font-size: 500%;
     text-align: center;
-    color: white;
-    background-color: black;
-    margin-bottom: 5%;
+    color: black;
+    margin-bottom: 0;
     font-family: 'Merienda', sans-serif;
     font-weight: 100;
 }
@@ -39,11 +37,9 @@ h1 {
     margin: 2.5% auto;
     padding-right: 2%;
     padding-left: 2%;
-    border: white 2px solid;
     font-size: 200%;
     text-align: center;
     color: white;
-    background-color: black;
     font-family: 'Merienda', sans-serif;
 }
 
@@ -78,6 +74,7 @@ h1 {
 }
 
 #rules {
+    margin-top: 30%;
     background-color: black;
     color: white;
     border: 2px solid white;
@@ -153,8 +150,6 @@ h1 {
     margin-right: 5%;
     margin-left: 5%;
     font-size: 200%;
-    background-color: black;
-    border: white 2px solid;
     font-family: 'Merienda', sans-serif;
 }
 
