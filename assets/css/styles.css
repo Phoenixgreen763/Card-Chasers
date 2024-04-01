@@ -224,10 +224,19 @@ h1 {
         margin-left: 20%;
         margin-right: 20%;
         margin-bottom: 5%;
+        font-size: 200%;
     }
 
     .time-lives {
         margin-bottom: 20%;
+    }
+
+    .time-lives p {
+        font-size: 100%;
+    }
+
+    .buttons button {
+        font-size: 100%;
     }
 
     .game-board {
