@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Cormorant Garamond');
+
 * {
     margin: 0;
     padding: 0;
@@ -23,6 +25,8 @@ h1 {
     color: white;
     background-color: black;
     margin-bottom: 5%;
+    font-family: 'Cormorant Garamond', sans-serif;
+    font-weight: 100;
 }
 
 .time-lives {
@@ -40,6 +44,7 @@ h1 {
     text-align: center;
     color: white;
     background-color: black;
+    font-family: 'Cormorant Garamond', sans-serif;
 }
 
 .time-lives i {
@@ -78,6 +83,7 @@ h1 {
     border: 2px solid white;
     text-align: center;
     font-size: 150%;
+    font-family: 'Cormorant Garamond', sans-serif;
 }
 
 .card {
@@ -149,7 +155,7 @@ h1 {
     font-size: 200%;
     background-color: black;
     border: white 2px solid;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Cormorant Garamond', sans-serif;
 }
 
 @media screen and (max-width: 1600px) {
