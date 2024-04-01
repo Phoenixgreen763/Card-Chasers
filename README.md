@@ -35,11 +35,13 @@ View the live website here - https://phoenixgreen763.github.io/Card-Chasers/
 ![Buttons section](/assets/images/buttons.png)
 
 * Easy Mode 
-    * Clicking the easy button starts the easy mode for the player
+    * Clicking the easy button starts the easy mode for the player, and removes the hard game from the game board
+    * The button then becomes inactive to stop any bugs occuring, whilst the game is already displayed
     * This mode displays 2 sets of cards on the game board, a 5 second timer, and 2 lives for the player
+    * If a player matches 2 incorrect cards, they lose a life
     * Each set is chosen at random and then displayed, this keeps the game fresh as to not repeat the same image over, and over.
     
-    ![Easy Cards]()
+    ![Easy Mode Cards]()
 
     * If the player runs out of time, they are met with a "Time's Up!" message, and the game then restarts.
     
@@ -52,6 +54,15 @@ View the live website here - https://phoenixgreen763.github.io/Card-Chasers/
     * If a player matches all the cards on the board, they are met with a "You Win!" message, and the game then restarts
 
     ![You Win Popup]()
+
+* Hard Mode 
+    * Clicking the hard button starts the hard mode for the player, and removes the easy game from the game board
+    * The button then becomes inactive to stop any bugs occuring, whilst the game is already displayed
+    * This mode displays 3 sets of cards on the game board, a 10 second timer, and 3 lives for the player
+    ![Hard Mode Cards]()
+    * If a player matches 2 incorrect cards, they lose a life
+    * Each set is chosen at random and then displayed, this keeps the game fresh as to not repeat the same image over, and over
+    * Each of the popup messages remain consistent for both easy and hard modes
 
 ### Features to Implement
 
@@ -73,9 +84,19 @@ View the live website here - https://phoenixgreen763.github.io/Card-Chasers/
 
 ## User Stories
 
+* User - A
+
+* User - B
+
+* User - C
+
 ## Testing
 
 ## Validator Testing 
+
+* CSS Validator 
+
+* HTML Validator
 
 ## All Known Bugs
 
