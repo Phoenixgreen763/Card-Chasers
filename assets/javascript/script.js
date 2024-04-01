@@ -335,12 +335,8 @@ document.addEventListener('DOMContentLoaded', () => {
         randomize();
         rulesParagraph.remove();
 
-        gameArea.style.display = 'grid';
-        gameArea.style.gridTemplateColumns = 'repeat(2, 10rem)';
-        gameArea.style.gridTemplateRows = 'repeat(2, 10rem)';
-        gameArea.style.gridGap = '2rem';
-        gameArea.style.perspective = '800px';
-        gameArea.style.height = '20em'
+        gameArea.classList.remove('active-game-hard');
+        gameArea.classList.add('active-game-easy');
         updateButtonStates();
     });
 
@@ -364,12 +360,8 @@ document.addEventListener('DOMContentLoaded', () => {
         randomizeHard();
         rulesParagraph.remove();
 
-        gameArea.style.display = 'grid';
-        gameArea.style.gridTemplateColumns = 'repeat(2, 10rem)';
-        gameArea.style.gridTemplateRows = 'repeat(2, 10rem)';
-        gameArea.style.gridGap = '2rem';
-        gameArea.style.perspective = '800px';
-        gameArea.style.height = '34em'
+        gameArea.classList.remove('active-game-easy');
+        gameArea.classList.add('active-game-hard');
         updateButtonStates();
     });
     12
