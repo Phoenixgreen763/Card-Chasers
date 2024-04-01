@@ -36,6 +36,24 @@ View the live website here - https://phoenixgreen763.github.io/Card-Chasers/
 
 ### Features to Implement
 
+* Score Tracker
+    * A tracker could be implemented to keep score of the number of wins a player attains in a row
+    * This would allow the user to keep track of their wins
+    * This would also give the user an additional challenge of attempting to gain a higher score
+    * This feature could then be used to add information to a leaderboard
+
+* Leaderboard 
+    * A score leaderboard is also a potential feature to include in future
+    * This would give users the ability to track their own highscore and challenge other players
+    * This again adds an additional level of fun and competitive nature to the game
+
+* User Details
+    * Inputs such as the users name could be required before play
+    * This feature would allow us to cache the users info and remember them when they return
+    * This information could be used in conjuction with something like a leaderboard to track highscores
+
+
+
 ## User Stories
 
 ## Testing
@@ -43,6 +61,10 @@ View the live website here - https://phoenixgreen763.github.io/Card-Chasers/
 ## Validator Testing 
 
 ## All Known Bugs
+
+* If a user clicks all the buttons too quickly they get a win, and a loss message. I have tried fixing this with a few methods but it is still apparent at times.
+
+* The game window does not fill bigger screens above 1400 px on some devices
 
 ## Design
 
