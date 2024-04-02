@@ -125,6 +125,10 @@ The testing done on the project consisted of automated validator testing to disc
     * ![]
 
 * Light House Testing
+    * Lighthouse was used to check for errors or optimisation issues
+    * The page achieved an overall score of 96
+    * The images were compressed to improve load times 
+    * ![Lighthouse Score](/assets/images/Lighthouse.png)
 
 ## All Known Bugs
 
