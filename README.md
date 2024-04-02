@@ -104,7 +104,7 @@ View the live website here - https://phoenixgreen763.github.io/Card-Chasers/
 
 ## Testing
 
-The testing done on the project consisted of automated validator testing to discover any errors in the code, and also manual user testing to find potential bugs. The decision was made not to build using tests as it was not deemed necessary, for such a game user testing seemed much more valuable.
+The testing done on the project consisted of automated validator testing to discover any errors in the code, and things such as lighthouse were used, this was done to optomise page loading or any potential issues. Also manual user testing to find potential bugs. The decision was made not to build using tests as it was not deemed necessary, for such a game user testing seemed much more valuable.
 
 ## Manual Testing
 
@@ -117,8 +117,14 @@ The testing done on the project consisted of automated validator testing to disc
 ## Validator Testing 
 
 * CSS Validator 
+    * 
+    * ![]()
 
 * HTML Validator
+    * 
+    * ![]
+
+* Light House Testing
 
 ## All Known Bugs
 
@@ -127,6 +133,19 @@ The testing done on the project consisted of automated validator testing to disc
 * The game window may not fill bigger screens above 1400 px on some devices/Monitors
 
 ## Design
+
+* Fonts
+   * Google fonts were used
+   * The font used for all the text is Merienda as it was stylistic, yet maintained readability 
+   * A font effect of outlined was also added to make the text stand out on the page
+
+* Color design
+    * The colors used to represent the site were chosen to replicate a "casino"/card game style
+    * These colors are consistent through the background design, and all the text on page
+
+* Images
+    * The cards themselves are images, are all "album covers" of different styles
+    * This was done to give a spin on the classic game cards that are typically used
 
 ## Deployment Of The Website
 
