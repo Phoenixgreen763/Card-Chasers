@@ -151,6 +151,25 @@ h1 {
     font-family: 'Merienda', sans-serif;
 }
 
+@media screen and (max-width: 1900px) {
+    .time-lives {
+        margin-bottom: 10%;
+    }
+
+    .active-game-easy {
+        grid-template-columns: repeat(2, 7rem);
+        grid-template-rows: repeat(3, 7rem);
+        height: 12em;
+        }
+
+    .active-game-hard {
+        grid-template-columns: repeat(2, 7rem);
+        grid-template-rows: repeat(3, 7rem);
+        height: 20em;
+        }
+
+}
+    
 @media screen and (max-width: 1600px) {
     h1 {
         font-size: 400%;
