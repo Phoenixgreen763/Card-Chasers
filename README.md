@@ -117,12 +117,12 @@ The testing done on the project consisted of automated validator testing to disc
 ## Validator Testing 
 
 * CSS Validator 
-    * 
-    * ![]()
+    * ![CSS results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fphoenixgreen763.github.io%2FCard-Chasers%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+    * ![CSS results image](/assets/css/styles.css)
 
 * HTML Validator
-    * 
-    * ![]
+    * ![HTML results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fphoenixgreen763.github.io%2FCard-Chasers%2F)
+    * ![HTML results image](/assets/images/HTML.png)
 
 * Light House Testing
     * Lighthouse was used to check for errors or optimisation issues
