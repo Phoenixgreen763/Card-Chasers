@@ -32,7 +32,7 @@ View the live website here - https://phoenixgreen763.github.io/Card-Chasers/
     * The Main landing page of the site also displays a set of buttons
     * These buttons allow the players to access the seperate modes for different difficulties.
 
-![Buttons section](/assets/images/Buttons.png)
+![Buttons section](/assets/images/button.png)
 
 * Easy Mode 
     * Clicking the easy button starts the easy mode for the player, and removes the hard game from the game board
