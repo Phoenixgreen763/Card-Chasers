@@ -7,7 +7,7 @@ Card Chasers is a memory matching card game, that can be enjoyed by users of all
 
 View the live website here - https://phoenixgreen763.github.io/Card-Chasers/ 
 
-![UX Mockup](/assets/images/UXmockup.jpg)
+![UX Mockup](/assets/images/UXmockup.png)
 
 ## Features 
 
@@ -81,6 +81,10 @@ View the live website here - https://phoenixgreen763.github.io/Card-Chasers/
     * Inputs such as the users name could be required before play
     * This feature would allow us to cache the users info and remember them when they return
     * This information could be used in conjuction with something like a leaderboard to track highscores
+
+* Modal Popup
+    * Instead of using alerts, a modal popup could be put in its place to better fit
+    * This would give a more visually appealing message on the page 
 
 ## User Stories
 
