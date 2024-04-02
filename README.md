@@ -89,12 +89,30 @@ View the live website here - https://phoenixgreen763.github.io/Card-Chasers/
 ## User Stories
 
 * User - A
+    * User A is a young child, and is using the site for a learning game
+    * This will help develop cognitive ability and test their memory
+    * It is also a fun experience for them to play
 
 * User - B
+    * User B is a teenager, they are using the site for fun
+    * This user decides to pick the hard mode to test themselves 
+    * The user is kept engaged with the randomisation of the images being displayed
 
 * User - C
+    * This user is the site developer, using the site for testing and fun
+    * They are using the website as it is something they themselves enjoy and find engaging to interact with
 
 ## Testing
+
+The testing done on the project consisted of automated validator testing to discover any errors in the code, and also manual user testing to find potential bugs. The decision was made not to build using tests as it was not deemed necessary, for such a game user testing seemed much more valuable.
+
+## Manual Testing
+
+* The site was tested by multiple freinds and family
+* Everyone found the design to be visually appealing and readable
+* Everyone found the game engaging and fun with the interactive nature of the game
+* The site has been tested on numerous browsers, such as chrome, opera gx, and safari
+    * Some outdated versions of safari may not load images, however, this was discovered on an old macbook, with an older version of safari running
 
 ## Validator Testing 
 
@@ -106,7 +124,7 @@ View the live website here - https://phoenixgreen763.github.io/Card-Chasers/
 
 * If a user clicks all the buttons too quickly they get a win, and a loss message. I have tried fixing this with a few methods but it is still apparent at times.
 
-* The game window does not fill bigger screens above 1400 px on some devices
+* The game window may not fill bigger screens above 1400 px on some devices/Monitors
 
 ## Design
 
