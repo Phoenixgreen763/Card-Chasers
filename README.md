@@ -41,25 +41,25 @@ View the live website here - https://phoenixgreen763.github.io/Card-Chasers/
     * If a player matches 2 incorrect cards, they lose a life
     * Each set is chosen at random and then displayed, this keeps the game fresh as to not repeat the same image over, and over.
     
-    ![Easy Mode Cards]()
+    ![Easy Mode Cards](/assets/images/Easy.png)
 
     * If the player runs out of time, they are met with a "Time's Up!" message, and the game then restarts.
     
-    ![Times Up Popup]()
+    ![Times Up Popup](/assets/images/TimesUp.png)
 
     * If the player runs out of lives, they are met with a "Try Again!" message, and the game then restarts
 
-    ![Try Again Popup]()
+    ![Try Again Popup](/assets/images/TryAgain.png)
 
     * If a player matches all the cards on the board, they are met with a "You Win!" message, and the game then restarts
 
-    ![You Win Popup]()
+    ![You Win Popup](/assets/images/YouWin.png)
 
 * Hard Mode 
     * Clicking the hard button starts the hard mode for the player, and removes the easy game from the game board
     * The button then becomes inactive to stop any bugs occuring, whilst the game is already displayed
     * This mode displays 3 sets of cards on the game board, a 10 second timer, and 3 lives for the player
-    ![Hard Mode Cards]()
+    ![Hard Mode Cards](/assets/images/Hard.png)
     * If a player matches 2 incorrect cards, they lose a life
     * Each set is chosen at random and then displayed, this keeps the game fresh as to not repeat the same image over, and over
     * Each of the popup messages remain consistent for both easy and hard modes
